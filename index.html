@@ -3,153 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faaiz Abdullah | Portfolio</title>
+    <title>Faaiz Abdullah | SFU Interactive Arts & CS</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">FA<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="visualizations.html">Visualizations</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <div class="hero-content">
-                <h1>Crafting Digital Experiences</h1>
-                <p>Computer Science & Interactive Arts Student at the intersection of logic and design.</p>
-                <div class="hero-btns">
-                    <a href="#experience" class="btn">View Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">FAA<span>IZ.</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="visualizations.html">Visuals</a>
+                <a href="#contact" class="nav-cta">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <span class="badge">Available for Fall 2026 Grad Roles</span>
+            <h1>Designing <span>Logic</span>. Building <span>Experiences</span>.</h1>
+            <p>I'm Faaiz Abdullah—a 4th year SFU student merging Computer Science with Interactive Arts to build scalable, human-centric digital solutions.</p>
+            <div class="hero-btns">
+                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#gallery" class="btn btn-secondary">See Projects</a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section id="about" class="fade-in">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="underline"></div>
+        <section id="about" class="about-grid">
+            <div class="about-content">
+                <div class="section-tag">About Me</div>
+                <h2>Bridging the gap between the screen and the server.</h2>
+                <p>Based in Canada, I specialize in full-stack development and cloud infrastructure. Whether it's optimizing AWS resource allocation or teaching the next generation of coders, I'm driven by efficient design and meaningful impact.</p>
             </div>
-            <p>I am a 22-year-old developer from Canada bridging the gap between robust backend systems and intuitive frontend interfaces. Currently in my 3rd year, I focus on creating scalable cloud infrastructure and engaging user experiences.</p>
-        </section>
-
-        <section id="education">
-            <div class="section-header">
-                <h2>Education</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3>B.Sc. in Computer Science & IAT</h3>
-                    <span class="date">Expected 2027</span>
+            <div class="gallery-stack">
+                <div class="gallery-item main-img">
+                    <img src="https://via.placeholder.com/600x800" alt="Main Portfolio Shot">
                 </div>
-                <p>Focusing on Software Systems and User Interface Design.</p>
-                <div class="tags">
-                    <span class="tag">Data Structures</span>
-                    <span class="tag">UI Design</span>
-                    <span class="tag">Cloud Computing</span>
-                    <span class="tag">Web Development</span>
+                <div class="gallery-item sub-img">
+                    <img src="https://via.placeholder.com/400x400" alt="Robotics Project">
                 </div>
             </div>
         </section>
 
         <section id="experience">
-            <div class="section-header">
-                <h2>Experience</h2>
-                <div class="underline"></div>
-            </div>
+            <div class="section-tag">Career</div>
+            <h2 class="section-title">Professional Path</h2>
             
-            <div class="card">
-                <div class="card-header">
-                    <h3>Cloud Engineering Intern</h3>
-                    <span class="date">Summer 2025</span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="year">2025</span>
+                        <span class="org">AEM</span>
+                    </div>
+                    <div class="time-content">
+                        <h3>Cloud Engineer Intern</h3>
+                        <p>Optimized AWS infrastructure for multi-cloud environments, focusing on cost-efficiency and data extraction scripts.</p>
+                    </div>
                 </div>
-                <p>Focused on AWS infrastructure management and deployment automation.</p>
-                <ul>
-                    <li>Optimized cloud resource allocation for cost-efficiency.</li>
-                    <li>Developed CI/CD pipelines to streamline development workflows.</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h3>Coding & Robotics Instructor</h3>
-                    <span class="date">Zebra Robotics</span>
-                </div>
-                <p>Mentoring the next generation of developers through hands-on technical training.</p>
-                <ul>
-                    <li>Instructed students in web fundamentals (HTML5, CSS3, JavaScript) and Python programming.</li>
-                    <li>Led robotics workshops using LEGO Spike Prime robots to teach logic and mechanical design.</li>
-                    <li>Simplified complex CS concepts for diverse age groups.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="section-header">
-                <h2>Technical Skills</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h4>Frontend</h4>
-                    <p>React, Next.js, Tailwind CSS</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Backend & Cloud</h4>
-                    <p>Python, AWS, Node.js</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools</h4>
-                    <p>Git, Figma, LEGO Spike</p>
+                <div class="timeline-item">
+                    <div class="time-meta">
+                        <span class="year">2024</span>
+                        <span class="org">Zebra Robotics</span>
+                    </div>
+                    <div class="time-content">
+                        <h3>Robotics Instructor</h3>
+                        <p>Mentored students in HTML/CSS, Python, and Spike Prime robotics, translating complex logic into digestible lessons.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="underline"></div>
+        <section id="skills" class="skills-alt">
+            <div class="skills-header">
+                <div class="section-tag">Tools</div>
+                <h2>The Stack</h2>
             </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>Email:</strong> 
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong> 
-                        <span>+1 (XXX) XXX-XXXX</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/faaizja" target="_blank" class="social-icon">GitHub</a>
-                        <a href="https://www.linkedin.com/in/faaiz-abdullah-9004391a4/" target="_blank" class="social-icon">LinkedIn</a>
-                    </div>
+            <div class="skills-grid-alt">
+                <div class="skill-group">
+                    <h4>Core</h4>
+                    <ul>
+                        <li>React / Next.js</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                    </ul>
                 </div>
-                
-                <form id="contact-form" class="glass-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-block">Send Message</button>
-                </form>
+                <div class="skill-group">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li>AWS</li>
+                        <li>Supabase</li>
+                        <li>SQL / NoSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Design</h4>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Tailwind</li>
+                        <li>Arduino</li>
+                    </ul>
+                </div>
             </div>
+        </section>
+
+        <section id="contact" class="contact-card">
+            <div class="contact-text">
+                <h2>Have a project in mind?</h2>
+                <p>Reach out via email or connect on LinkedIn.</p>
+                <div class="contact-links">
+                    <a href="mailto:fja19@sfu.ca">fja19@sfu.ca</a>
+                    <a href="https://linkedin.com/in/faaiz-abdullah-9004391a4/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/faaizja" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" placeholder="Message"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Faaiz Abdullah. All rights reserved.</p>
+    <footer class="footer-alt">
+        <p>© 2026 Faaiz Abdullah <span>•</span> Built with intent.</p>
     </footer>
 
     <script src="main.js"></script>
