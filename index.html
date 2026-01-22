@@ -3,11 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faaiz Abdullah - Assignment 2 - Personal Website - IAT 355</title>
+    <title>Faaiz Abdullah | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    
-</body>
 
+    <header>
+        <nav class="navbar">
+            <div class="logo">FA<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="visualizations.html">Visualizations</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Crafting Digital Experiences</h1>
+                <p>Computer Science & Interactive Arts Student at the intersection of logic and design.</p>
+                <div class="hero-btns">
+                    <a href="#experience" class="btn">View Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="fade-in">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <p>I am a 22-year-old developer from Canada bridging the gap between robust backend systems and intuitive frontend interfaces. Currently in my 3rd year, I focus on creating scalable cloud infrastructure and engaging user experiences.</p>
+        </section>
+
+        <section id="education">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>B.Sc. in Computer Science & IAT</h3>
+                    <span class="date">Expected 2027</span>
+                </div>
+                <p>Focusing on Software Systems and User Interface Design.</p>
+                <div class="tags">
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">UI Design</span>
+                    <span class="tag">Cloud Computing</span>
+                    <span class="tag">Web Development</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Cloud Engineering Intern</h3>
+                    <span class="date">Summer 2025</span>
+                </div>
+                <p>Focused on AWS infrastructure management and deployment automation.</p>
+                <ul>
+                    <li>Optimized cloud resource allocation for cost-efficiency.</li>
+                    <li>Developed CI/CD pipelines to streamline development workflows.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Coding & Robotics Instructor</h3>
+                    <span class="date">Zebra Robotics</span>
+                </div>
+                <p>Mentoring the next generation of developers through hands-on technical training.</p>
+                <ul>
+                    <li>Instructed students in web fundamentals (HTML5, CSS3, JavaScript) and Python programming.</li>
+                    <li>Led robotics workshops using LEGO Spike Prime robots to teach logic and mechanical design.</li>
+                    <li>Simplified complex CS concepts for diverse age groups.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header">
+                <h2>Technical Skills</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <p>React, Next.js, Tailwind CSS</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend & Cloud</h4>
+                    <p>Python, AWS, Node.js</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <p>Git, Figma, LEGO Spike</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong> 
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> 
+                        <span>+1 (XXX) XXX-XXXX</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/faaizja" target="_blank" class="social-icon">GitHub</a>
+                        <a href="https://www.linkedin.com/in/faaiz-abdullah-9004391a4/" target="_blank" class="social-icon">LinkedIn</a>
+                    </div>
+                </div>
+                
+                <form id="contact-form" class="glass-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-block">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Faaiz Abdullah. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
 </html>
