@@ -6,7 +6,7 @@ What is this?
 A personal website that acts as a portfolio but also serves as a home for some creative SVG visualizations I'm working on. I wanted to create something that reflects my background in both Computer Science and Interactive Arts, so I focused on making it look clean while keeping the code organized.
 
 The Tech I Used
-HTML5: I kept this semantic (using tags like <nav>, <main>, and <section>) so it’s easy to read and passes validation.
+HTML5: I kept this semantic so it’s easy to read and passes validation.
 
 CSS: I used a lot of Flexbox and CSS Grid to make sure the layout doesn't break on phones or tablets. I also added some custom variables for the colors to keep things consistent.
 
