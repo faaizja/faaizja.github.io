@@ -13,7 +13,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="Faaiz Abdullah Portfolio Home">FAAIZ.</a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
+                <a href="#about" class="active">Home</a>
                 <a href="visualizations.html">Visuals</a>
                 <a href="#contact" class="nav-cta">Let's Talk</a>
             </div>
@@ -39,12 +39,12 @@
             </div>
             <div class="gallery-stack">
                 <div class="gallery-item main-img">
-                    <img src="stormhacks.JPG" alt="Won 1st Place at StormHacks 2025">
+                    <img src="stormhacks.JPG" alt="Won 1st Place at StormHacks 2025 hackathon">
                 </div>
                 <div class="gallery-item sub-img">
-                    <video autoplay loop muted playsinline controls title="Robotics Project Demo" aria-label="A video showing a robotics project in action">
+                    <video autoplay loop muted playsinline controls title="Robotics Project Demo" aria-label="A video demonstration of a robotics project involving automated systems">
                         <source src="pharmabotics.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                        <p>Your browser does not support the video tag. This video shows a robotics demonstration for the Pharmabotics project.</p>
                     </video>
                 </div>
             </div>
@@ -123,9 +123,9 @@
                 </div>
             </div>
             <form id="contact-form">
-                <input type="text" placeholder="Name" aria-label="Full Name" required>
-                <input type="email" placeholder="Email" aria-label="Email Address" required>
-                <textarea rows="4" placeholder="Message" aria-label="Your Message"></textarea>
+                <input type="text" id="full-name" placeholder="Name" aria-label="Enter your full name" required>
+                <input type="email" id="email-address" placeholder="Email" aria-label="Enter your email address" required>
+                <textarea rows="4" id="message-body" placeholder="Message" aria-label="Type your message here"></textarea>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </section>
