@@ -11,7 +11,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">FAAIZ.</a>
+            <a href="index.html" class="logo" aria-label="Faaiz Abdullah Portfolio Home">FAAIZ.</a>
             <div class="nav-links">
                 <a href="index.html" class="active">Home</a>
                 <a href="visualizations.html">Visuals</a>
@@ -42,7 +42,7 @@
                     <img src="stormhacks.JPG" alt="Won 1st Place at StormHacks 2025">
                 </div>
                 <div class="gallery-item sub-img">
-                    <video autoplay loop muted playsinline>
+                    <video autoplay loop muted playsinline controls title="Robotics Project Demo" aria-label="A video showing a robotics project in action">
                         <source src="pharmabotics.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -86,7 +86,7 @@
             </div>
             <div class="skills-grid-alt">
                 <div class="skill-group">
-                    <h4>Core</h4>
+                    <h3>Core</h3>
                     <ul>
                         <li>React / Next.js</li>
                         <li>Python</li>
@@ -94,7 +94,7 @@
                     </ul>
                 </div>
                 <div class="skill-group">
-                    <h4>Infrastructure</h4>
+                    <h3>Infrastructure</h3>
                     <ul>
                         <li>AWS</li>
                         <li>Supabase</li>
@@ -102,7 +102,7 @@
                     </ul>
                 </div>
                 <div class="skill-group">
-                    <h4>Design</h4>
+                    <h3>Design</h3>
                     <ul>
                         <li>Figma</li>
                         <li>Tailwind</li>
@@ -123,9 +123,9 @@
                 </div>
             </div>
             <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="4" placeholder="Message"></textarea>
+                <input type="text" placeholder="Name" aria-label="Full Name" required>
+                <input type="email" placeholder="Email" aria-label="Email Address" required>
+                <textarea rows="4" placeholder="Message" aria-label="Your Message"></textarea>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </section>
