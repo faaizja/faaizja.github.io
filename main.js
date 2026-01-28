@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Smooth Scrolling for navigation links
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Simple Form Validation & Handling
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Simple Header Scroll Effect
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('nav');
         if (window.scrollY > 50) {
