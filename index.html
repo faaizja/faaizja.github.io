@@ -13,7 +13,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo" aria-label="Faaiz Abdullah Portfolio Home">FAAIZ.</a>
             <div class="nav-links">
-                <a href="/" class="active">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="visualizations.html">Visualizations</a>
                 <a href="#contact" class="nav-cta">Let's Talk</a>
             </div>
@@ -42,10 +42,16 @@
                     <img src="stormhacks.JPG" alt="Won 1st Place at StormHacks 2025 hackathon">
                 </div>
                 <div class="gallery-item sub-img">
-                    <video autoplay loop muted playsinline controls title="Robotics Project Demo" aria-label="A video demonstration of a robotics project involving automated systems">
+                    <video autoplay loop muted playsinline controls 
+                           title="Robotics Project Demo" 
+                           aria-label="A video demonstration of a robotics project involving automated systems"
+                           aria-describedby="video-desc">
                         <source src="pharmabotics.mp4" type="video/mp4">
                         <p>Your browser does not support the video tag. This video shows a robotics demonstration for the Pharmabotics project.</p>
                     </video>
+                    <div id="video-desc" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+                        A video demonstration of the Pharmabotics project showing a robotics system automatically sorting and moving items.
+                    </div>
                 </div>
             </div>
         </section>

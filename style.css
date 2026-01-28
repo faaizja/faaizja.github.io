@@ -7,6 +7,7 @@
     --text-muted: #64748b;
     --border: #e2e8f0;
     --radius: 12px;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 * {
@@ -39,8 +40,8 @@ body {
 .nav-container {
     max-width: 900px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
+    /* Increased opacity to 0.95 to maintain readability without backdrop-filter */
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--border);
     padding: 0.75rem 1.5rem;
     border-radius: 100px;
