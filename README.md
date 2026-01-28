@@ -8,14 +8,14 @@ A personal website that acts as a portfolio but also serves as a home for some c
 The Tech I Used
 HTML5: I kept this semantic so it’s easy to read and passes validation.
 
-CSS: I used a lot of Flexbox and CSS Grid to make sure the layout doesn't break on phones or tablets. I also added some custom variables for the colors to keep things consistent.
+CSS: I made sure the layout doesn't break on phones or tablets. I also added some custom variables for the colors to keep things consistent.
 
 JavaScript: Used for some basic stuff like smooth scrolling and the contact form logic.
 
-SVG & JS: The visualizations on the second page are built using SVG and JavaScript (found in vis.js).
+SVG & JS visualization: The visualizations are built using SVG and JavaScript (found in vis.js).
 
 How the files are organized
-index.html: The main page. It has my about me, my experience (like my time at AEM and Zebra Robotics), and a way to contact me.
+index.html: The main page. It has my about me, my experience, and a way to contact me.
 
 visualizations.html: This is where I put the SVG art and the creative visualization parts of the assignment.
 
@@ -28,4 +28,6 @@ vis.js: This is where the actual code for the SVG drawings is.
 README.md: This file!
 
 How to navigate the site
+
+https://faaizja.github.io/ 
 It’s pretty straightforward. You can use the menu at the top to jump between the Home page and the Visuals page.
