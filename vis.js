@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sun.setAttribute("fill", "#fde047");
         svg.appendChild(sun);
 
-        // Grass
         const grass = document.createElementNS(ns, "rect");
         grass.setAttribute("y", "220");
         grass.setAttribute("width", "500");

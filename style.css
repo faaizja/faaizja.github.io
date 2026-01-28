@@ -30,7 +30,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Navbar */
 .navbar {
     position: sticky;
     top: 20px;
@@ -79,7 +78,6 @@ body {
     border-radius: 50px;
 }
 
-/* Hero */
 .hero {
     padding: 8rem 0 6rem;
     text-align: left;
@@ -118,7 +116,6 @@ body {
 .btn-secondary { background: white; color: var(--primary); border: 1px solid var(--border); margin-left: 1rem; }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); cursor: pointer; }
 
-/* Sections */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -165,7 +162,6 @@ body {
     border-radius: var(--radius);
 }
 
-/* Timeline */
 .timeline {
     margin-top: 3rem;
 }
@@ -187,7 +183,6 @@ body {
 
 .time-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 
-/* Skills */
 .skills-alt {
     padding: 6rem 0;
     background: var(--bg-alt);
@@ -208,7 +203,6 @@ body {
 .skill-group ul { list-style: none; padding: 0; }
 .skill-group li { margin-bottom: 0.5rem; font-weight: 600; }
 
-/* Contact */
 .contact-card {
     background: var(--primary);
     color: white;
@@ -264,7 +258,6 @@ body {
     min-height: 400px;
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
 @media (max-width: 900px) {
     .about-grid, .contact-card, .skills-alt { grid-template-columns: 1fr; gap: 2rem; }
     .timeline-item { grid-template-columns: 1fr; gap: 1rem; }
@@ -272,12 +265,12 @@ body {
     .hero h1 { font-size: 3rem; }
     .sub-img { display: none; }
     
-    /* Navbar text shrinks slightly on tablet */
+
     .nav-links a { margin-left: 1rem; }
 }
 
 @media (max-width: 600px) {
-    /* Stack Navbar on mobile */
+
     .nav-container {
         flex-direction: column;
         padding: 1rem;
@@ -292,7 +285,6 @@ body {
     }
     .nav-links a { margin-left: 0; }
     
-    /* Make skills grid single column */
     .skills-grid-alt { grid-template-columns: 1fr; }
     
     .hero { padding: 6rem 0 4rem; }
