@@ -23,7 +23,7 @@ style.css: All the styling and responsive design.
 
 main.js: Handles the UI interactions for the homepage.
 
-vis.js: This is where the actual code for the SVG drawings lives.
+vis.js: This is where the actual code for the SVG drawings is.
 
 README.md: This file!
 
