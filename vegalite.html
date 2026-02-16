@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegalite Visualizations | Faaiz Abdullah</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Faaiz Abdullah Portfolio Home">FAAIZ.</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="visualizations.html">Visualizations</a>
+                <a href="vegalite.html" class="active">Vegalite Visualizations</a>
+                <a href="#contact" class="nav-cta">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero" style="padding: 4rem 0 2rem;">
+            <h1>Data-Driven <span>Insights</span></h1>
+            <p>Exploring video game sales data through interactive Vega-Lite visualizations.</p>
+        </header>
+
+        <section class="vis-section">
+            <div class="section-tag">Visualization 1</div>
+            <h2>Global Sales by Genre and Platform</h2>
+
+            <h3 style="font-size: 1.1rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.5rem;">Prompts:</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Prompt 1:</strong> What single combination of game platform and
+                genre (e.g., Wii Sports games vs. PS3 Action games) has generated the highest total global sales?</p>
+            <p style="margin-bottom: 2rem;"><strong>Prompt 2:</strong> Focusing on a specific console generation (Wii,
+                PS3, and Xbox 360), how do the global sales of different genres compare to one another?</p>
+
+            <!-- VISUALIZATION OBJECT CALL -->
+            <div id="vis1" class="svg-stage" style="width: 100%; min-height: 400px;"></div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem;">Reflection</h3>
+            <p>I chose a grouped bar chart filtered to the console generation of the Wii, PS3, and X360, to
+                clearly compare
+                genre performance. This design choice avoids cluttering the screen with too many platforms or
+                indications that one might get confused with. The
+                visualization clearly reveals that action games dominate global PS3 sales, action games dominate XBOX
+                360 sales, and the Wii's massive success was driven by the sports genre.</p>
+        </section>
+
+        <section id="contact" class="contact-card">
+            <div class="contact-text">
+                <h2>Have a project in mind?</h2>
+                <p>Reach out via email or connect on LinkedIn.</p>
+                <div class="contact-links">
+                    <a href="mailto:fja19@sfu.ca">fja19@sfu.ca</a>
+                    <a href="https://linkedin.com/in/faaiz-abdullah-9004391a4/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/faaizja" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <form id="contact-form">
+                <input type="text" id="full-name" placeholder="Name" aria-label="Enter your full name" required>
+                <input type="email" id="email-address" placeholder="Email" aria-label="Enter your email address"
+                    required>
+                <textarea rows="4" id="message-body" placeholder="Message"
+                    aria-label="Type your message here"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer-alt">
+        <p>© 2026 Faaiz Abdullah</p>
+    </footer>
+
+    <script>
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": {
+                "text": "Global Sales by Genre and Platform (7th Gen Consoles)",
+                "fontSize": 16,
+                "font": "Plus Jakarta Sans, sans-serif",
+                "fontWeight": 600
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/SIAT-IAT-355/A3-Intro-to-vegalite/refs/heads/main/dataset/videogames_wide.csv"
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Platform",
+                        "oneOf": ["Wii", "PS3", "X360"]
+                    }
+                }
+            ],
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "axis": {
+                        "labelAngle": -45,
+                        "labelFontSize": 11
+                    }
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Global_Sales",
+                    "type": "quantitative",
+                    "title": "Total Global Sales (millions)"
+                },
+                "color": {
+                    "field": "Platform",
+                    "type": "nominal",
+                    "title": "Platform",
+                    "scale": {
+                        "domain": ["Wii", "PS3", "X360"],
+                        "range": ["#006FFF", "#FF6B35", "#00D9A3"]
+                    }
+                },
+                "xOffset": {
+                    "field": "Platform"
+                }
+            },
+            "width": 600,
+            "height": 400,
+            "config": {
+                "font": "Plus Jakarta Sans, sans-serif",
+                "axis": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                },
+                "legend": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                }
+            }
+        };
+
+        vegaEmbed('#vis1', spec1, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        }).catch(console.error);
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
