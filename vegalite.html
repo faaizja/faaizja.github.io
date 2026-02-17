@@ -48,11 +48,73 @@
 
             <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem;">Reflection</h3>
             <p>I chose a grouped bar chart filtered to the console generation of the Wii, PS3, and X360, to
-                clearly compare
-                genre performance. This design choice avoids cluttering the screen with too many platforms or
-                indications that one might get confused with. The
-                visualization clearly reveals that action games dominate global PS3 sales, action games dominate XBOX
-                360 sales, and the Wii's massive success was driven by the sports genre.</p>
+                clearly compare genre performance. This design choice avoids cluttering the screen with too many
+                platforms or indications that one might get confused with. The visualization clearly reveals that action
+                games dominate global PS3 sales, action games dominate XBOX 360 sales, and the Wii's massive success was
+                driven by the sports genre.</p>
+        </section>
+
+        <section class="vis-section">
+            <div class="section-tag">Visualization 2</div>
+            <h2>Sales Over Time by Platform and Genre</h2>
+
+            <h3 style="font-size: 1.1rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.5rem;">Prompts:</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Prompt 1:</strong> How did the peak sales years of two rival
+                consoles (PS3 and Xbox 360) compare over time?</p>
+            <p style="margin-bottom: 2rem;"><strong>Prompt 2:</strong> How has the total sales of the
+                shooter genre evolved over time compared to the sports genre?</p>
+
+            <!-- VISUALIZATION OBJECT CALL -->
+            <div id="vis2" class="svg-stage" style="width: 100%; min-height: 400px;"></div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem;">Reflection</h3>
+            <p>I used a line chart to track sales over time, splitting PS3 and Xbox 360 into separate columns
+                and coloring lines by genre. This allows for a clear comparison of peak years for each console and genre
+                success. We can see that shooters steadily grew on both consoles, peaking around 2011-12, and nearly
+                always being more popular than sports titles.</p>
+        </section>
+
+        <section class="vis-section">
+            <div class="section-tag">Visualization 3</div>
+            <h2>Regional Sales vs. Platform</h2>
+
+            <h3 style="font-size: 1.1rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.5rem;">Prompts:</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Prompt 1:</strong> How do total sales in Japan compare to North
+                America and Europe across the generation of consoles: Wii, PS3, X360, DS, PSP?</p>
+            <p style="margin-bottom: 2rem;"><strong>Prompt 2:</strong> Which platform relies the most on sales outside
+                of NA, EU, and JP for their total sales?</p>
+
+            <!-- VISUALIZATION OBJECT CALL -->
+            <div id="vis3" class="svg-stage" style="width: 100%; min-height: 400px;"></div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem;">Reflection</h3>
+            <p>To answer these prompts, I used a stacked bar chart comparing the top 7th-generation platforms. Because I
+                used the wide CSV dataset file from the github, I implemented Vega-Lite's "fold" feature to collapse the
+                four separate regional sales columns into a single region variable. The chart highlights
+                regional differences with colors, such as the DS dominating the Japanese market while the Xbox 360
+                pretty much dominated North America and Europe.</p>
+        </section>
+
+        <section class="vis-section">
+            <div class="section-tag">Visualization 4</div>
+            <h2>The East vs. West Divide</h2>
+
+            <h3 style="font-size: 1.1rem; font-weight: 400; margin-top: 1.5rem; margin-bottom: 0.5rem;">Prompts:</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Prompt 1:</strong> Is there a distinct regional preference between
+                North America and Japan when it comes to specific game genres?</p>
+            <p style="margin-bottom: 2rem;"><strong>Prompt 2:</strong> Do the highest-selling games globally tend to
+                perform equally well in both Western and Eastern markets, or do they lean heavily to one side?</p>
+
+            <!-- VISUALIZATION OBJECT CALL -->
+            <div id="vis4" class="svg-stage" style="width: 100%; min-height: 400px;"></div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem;">Reflection</h3>
+            <p>For my visual story, I wanted to explore the cultural divide in gaming preferences using a scatter plot.
+                By plotting North American sales against Japanese sales and coloring by genre, we can see a clear
+                difference in popularity be region. We can see a distinct split: role-playing games pull heavily upward
+                along the Y-axis (Japan), while shooters and action games stretch far along the X-axis (North America).
+                A design choice I chose was to add interactive tooltips, which allows the user to see exactly which
+                blockbuster titles are driving these regional trends.</p>
         </section>
 
         <section id="contact" class="contact-card">
@@ -147,6 +209,255 @@
         };
 
         vegaEmbed('#vis1', spec1, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        }).catch(console.error);
+
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": {
+                "text": "Sales Over Time: PS3 vs Xbox 360 (Shooter vs Sports)",
+                "fontSize": 16,
+                "font": "Plus Jakarta Sans, sans-serif",
+                "fontWeight": 600
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/SIAT-IAT-355/A3-Intro-to-vegalite/refs/heads/main/dataset/videogames_wide.csv"
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Platform",
+                        "oneOf": ["PS3", "X360"]
+                    }
+                },
+                {
+                    "filter": {
+                        "field": "Genre",
+                        "oneOf": ["Shooter", "Sports"]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "line",
+                "point": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "title": "Year",
+                    "axis": {
+                        "labelAngle": -45,
+                        "labelFontSize": 10
+                    }
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Global_Sales",
+                    "type": "quantitative",
+                    "title": "Total Global Sales (millions)"
+                },
+                "color": {
+                    "field": "Genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "scale": {
+                        "domain": ["Shooter", "Sports"],
+                        "range": ["#FF6B35", "#006FFF"]
+                    }
+                },
+                "column": {
+                    "field": "Platform",
+                    "type": "nominal",
+                    "title": "Platform"
+                }
+            },
+            "width": 280,
+            "height": 300,
+            "config": {
+                "font": "Plus Jakarta Sans, sans-serif",
+                "axis": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                },
+                "legend": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                }
+            }
+        };
+
+        vegaEmbed('#vis2', spec2, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        }).catch(console.error);
+
+        const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": {
+                "text": "Regional Sales Distribution by Platform (7th Gen)",
+                "fontSize": 16,
+                "font": "Plus Jakarta Sans, sans-serif",
+                "fontWeight": 600
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/SIAT-IAT-355/A3-Intro-to-vegalite/refs/heads/main/dataset/videogames_wide.csv"
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Platform",
+                        "oneOf": ["Wii", "PS3", "X360", "DS", "PSP"]
+                    }
+                },
+                {
+                    "fold": ["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"],
+                    "as": ["Region", "Sales"]
+                }
+            ],
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Platform",
+                    "type": "nominal",
+                    "title": "Platform",
+                    "axis": {
+                        "labelFontSize": 12
+                    }
+                },
+                "y": {
+                    "aggregate": "sum",
+                    "field": "Sales",
+                    "type": "quantitative",
+                    "title": "Total Sales (millions)"
+                },
+                "color": {
+                    "field": "Region",
+                    "type": "nominal",
+                    "title": "Region",
+                    "scale": {
+                        "domain": ["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"],
+                        "range": ["#006FFF", "#00D9A3", "#FF6B35", "#9D4EDD"]
+                    },
+                    "legend": {
+                        "labelExpr": "datum.label == 'NA_Sales' ? 'North America' : datum.label == 'EU_Sales' ? 'Europe' : datum.label == 'JP_Sales' ? 'Japan' : 'Other Regions'"
+                    }
+                }
+            },
+            "width": 600,
+            "height": 400,
+            "config": {
+                "font": "Plus Jakarta Sans, sans-serif",
+                "axis": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                },
+                "legend": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                }
+            }
+        };
+
+        vegaEmbed('#vis3', spec3, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        }).catch(console.error);
+
+        const spec4 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": {
+                "text": "East vs. West: NA Sales vs. JP Sales by Genre",
+                "fontSize": 16,
+                "font": "Plus Jakarta Sans, sans-serif",
+                "fontWeight": 600
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/SIAT-IAT-355/A3-Intro-to-vegalite/refs/heads/main/dataset/videogames_wide.csv"
+            },
+            "mark": {
+                "type": "circle",
+                "opacity": 0.7,
+                "size": 60
+            },
+            "encoding": {
+                "x": {
+                    "field": "NA_Sales",
+                    "type": "quantitative",
+                    "title": "North America Sales (millions)",
+                    "scale": {
+                        "zero": false
+                    }
+                },
+                "y": {
+                    "field": "JP_Sales",
+                    "type": "quantitative",
+                    "title": "Japan Sales (millions)",
+                    "scale": {
+                        "zero": false
+                    }
+                },
+                "color": {
+                    "field": "Genre",
+                    "type": "nominal",
+                    "title": "Genre",
+                    "scale": {
+                        "scheme": "category20"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Name",
+                        "type": "nominal",
+                        "title": "Game Title"
+                    },
+                    {
+                        "field": "Platform",
+                        "type": "nominal",
+                        "title": "Platform"
+                    },
+                    {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "title": "Genre"
+                    },
+                    {
+                        "field": "Global_Sales",
+                        "type": "quantitative",
+                        "title": "Global Sales (millions)",
+                        "format": ".2f"
+                    }
+                ]
+            },
+            "width": 600,
+            "height": 400,
+            "config": {
+                "font": "Plus Jakarta Sans, sans-serif",
+                "axis": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                },
+                "legend": {
+                    "labelFont": "Plus Jakarta Sans, sans-serif",
+                    "titleFont": "Plus Jakarta Sans, sans-serif"
+                }
+            }
+        };
+
+        vegaEmbed('#vis4', spec4, {
             actions: {
                 export: true,
                 source: false,
